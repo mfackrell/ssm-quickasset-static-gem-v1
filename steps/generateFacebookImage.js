@@ -20,26 +20,30 @@ export async function generateFacebookImage(caption) {
 
   try {
     const prompt = `
-Create a powerful, share-worthy Facebook graphic (1200x1350).
-YOUR TASK:
-Create a sophisticated, minimalist typographic poster using the INPUT HEADLINE as the central visual element.
+Create a high-engagement Facebook feed graphic designed to visually reinforce the message of the caption provided below. 
+Use the caption to determine the emotional tone, the core statement, and the key phrase to feature as a bold headline on the graphic.
 
-DESIGN ETHOS: "Clarity over emotion."
-The aesthetic should feel like a clean, organized digital workspace or a sophisticated blueprint. It should communicate professional utility.
+DO NOT use the full caption as text — extract the strongest idea or punchline and convert it into a visually dominant headline.
 
-VISUAL CONSTRAINTS:
-- Typography: Use a clean, modern, bold sans-serif font. The headline must be the dominant visual feature.
-- Background: Use subtle digital textures that suggest organization. Think clean grids, faint technical lines, abstract representations of file structures, or smooth, professional gradients (e.g., slate grey to muted blue, deep forest green to charcoal).
-- Color Palette: "Premium Utility." Use sophisticated tech colors. No loud, aggressive, or "hustle" colors (like bright reds or neon yellows).
-- Composition: Use ample whitespace. The design should feel uncluttered and expensive.
+Design style:
+- Authentic, relatable, strong message-driven layout
+- Horizontal or square orientation (1200x1200 or 1200x630)
+- Clear, readable typography with conversational tone
+- Balanced spacing, structured layout, not chaotic
+- Softer emotional aesthetic compared to Instagram: more human, story-based, “real life” energy
+- Use subtle textures, gradients, or abstract shapes as background
+- Color palette should support mood (confidence, challenge, inspiration, realism)
+- No corporate stock photos, no cheesy icons, no staged business imagery
+- Clean and approachable, not overly designed
 
-NEGATIVE CONSTRAINTS (CRITICAL):
-- NO stock photos of people, laptops, coffee cups, or desks.
-- NO cheesy emotional imagery or "inspirational" vibes.
-- NO aggressive or chaotic aesthetics.
+Purpose:
+- Spark discussion and emotional connection
+- Encourage readers to stop scrolling and reflect on the message
 
-The final image should stop the scroll because it looks like a highly valuable piece of professional software, not a motivational quote.
-TEXT TO RENDER ON IMAGE: "${headline}"
+Input: "${headline}"
+
+Output:
+A Facebook-optimized graphic including a dominant headline extracted from the caption, visually designed to feel authentic and relatable, formatted to maximize conversation and sharing.
 `;
 
     const textPart = { text: prompt };

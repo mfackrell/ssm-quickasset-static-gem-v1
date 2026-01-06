@@ -15,27 +15,28 @@ export async function generatePinterestImage(pinterestData) {
 
   try {
     const prompt = `
-Create a Pinterest graphic (1080x1920).
-YOUR TASK:
-Create a sophisticated, minimalist typographic poster using the INPUT HEADLINE as the central visual element.
+Create a visually compelling Pinterest graphic designed to maximize saves, shares, and search discovery. 
+Use the caption provided below to determine the core message and extract the most valuable phrase, insight, or instructional headline. 
+Do NOT use the full caption; transform its core idea into a strong, save-worthy headline that can stand alone.
 
-DESIGN ETHOS: "Digital Clarity."
-The graphic should feel like the cover of a valuable, organized digital file or template. It needs to look professional and "save-worthy" because of its utility, not its vibes.
+Design style requirements:
+- Clean, aesthetic, modern layout with an organized structure
+- Vertical format 1000x1500px (2:3 ratio), optimized for Pinterest
+- Use soft gradients, light textures, or minimal background patterns that feel premium
+- Include subtle, intentional visual elements (lines, shapes, accents) to guide the eye
+- Typography should be clear, elegant, and highly readable; balanced hierarchy
+- Use a calming, thoughtful visual style vs high-aggression or hype
+- Select a color palette that feels modern and inspirational based on the tone of the caption
+- No stock photography of people, no clipart, no cheesy icons
+- Avoid clutter and excessive effects; design should feel aspirational and actionable
 
-VISUAL CONSTRAINTS:
-- Typography: Use a clean, modern, bold sans-serif font. The headline must be instantly readable.
-- Background: Use subtle digital textures that suggest organization. Think clean grids, faint technical lines, abstract representations of file folders, or smooth, professional gradients (e.g., slate grey to muted blue, deep forest green to charcoal).
-- Color Palette: "Premium Utility." Use sophisticated tech colors. No loud, aggressive colors.
-- Composition: Use ample whitespace. The design should feel uncluttered and expensive.
+Purpose:
+Create a graphic that feels like a mini guide, checklist, or insight worth saving for reference.
 
-NEGATIVE CONSTRAINTS (CRITICAL):
-- NO stock photos of people, laptops, coffee cups, or plants.
-- NO cheesy icons (lightbulbs, gears, dollar signs).
-- NO "soft aesthetic" or "lifestyle" vibes.
-- NO aggressive or chaotic textures.
+Input Caption: "${textOverlay}"
+Output:
+A Pinterest-optimized image with a strong, save-worthy headline extracted from the caption, laid out in a clean and aesthetic design suitable for high engagement and discovery.
 
-The final image should look like a high-end digital artifact that stops the scroll because of how clean and valuable it looks.
-TEXT TO RENDER: "${textOverlay}"
 `;
 
     const config = {

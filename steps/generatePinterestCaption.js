@@ -8,8 +8,9 @@ export async function generatePinterestCaption(topic) {
   console.log(`Generating Pinterest Title & Caption for topic: "${topic}"`);
 
   const systemPrompt = `
-You are a Pinterest SEO strategist for QuickAsset.
-You are writing a Pinterest Description based on the "Lighter, Not Louder" philosophy.
+Write a Pinterest caption designed for high saves, shares, and search discovery.
+
+The output cannot exceed 450 characters.
 
 You output JSON only.
 Your goal is to create two distinct assets:
@@ -19,6 +20,29 @@ Your goal is to create two distinct assets:
 
   const userPrompt = `
 TOPIC: ${topic}
+
+STYLE + TONE:
+- Inspirational, practical, aesthetic, motivational-but-actionable
+- Clean, organized language
+- Keyword-rich for Pinterest SEO
+- Skimmable formatting with short lines and emoji accents
+- Feels like a mini-guide, checklist, or blueprint
+- Clear value and fast clarity
+
+STRUCTURE REQUIREMENTS:
+- Strong curiosity-driving headline as the first line (optimized for search + saves)
+- 3–7 short actionable insights, ideas, or steps related to the topic
+- Light use of emojis that match Pinterest’s aesthetic vibe (✨📌🌿💡📍)
+- Clear takeaway or motivation
+- CTA inviting users to Save or Try it
+- Add 10–20 keyword-based Pinterest hashtags at the bottom
+
+DO NOT:
+- Do not write like Instagram or Facebook
+- Do not write a rant or opinion piece
+- Do not write a short response
+- Do not use labels like “Output” or “Caption:”
+- Do not explain what you are doing
 
 REQUIREMENTS:
 1. Analyze the INPUT HEADLINE to identify the specific digital asset and audience implied (e.g., if it mentions "CAD Blocks," the asset is CAD Blocks and the audience is Architects).

@@ -16,27 +16,32 @@ export async function generateInstagramImage(caption) {
 
   try {
     const prompt = `
-Create a vertical Instagram graphic (1080x1350).
-YOUR TASK:
-Create a sophisticated, minimalist typographic poster using the INPUT HEADLINE as the central visual element.
+Create a bold, high-impact vertical Instagram graphic (1080x1350) designed to stop scrolling and visually reinforce the message of the caption provided below.
 
-DESIGN ETHOS: "Clarity is power."
-The aesthetic should feel like a clean, organized digital workspace. It should breathe relief and simplicity.
+Use the caption text as the main design inspiration and convert its core idea into a powerful, emotionally charged visual.
+ 
+Dynamically extract the most impactful short phrase or hook from the caption and use it as the headline text on the graphic.
 
-VISUAL CONSTRAINTS:
-- Typography: Use a clean, modern, bold sans-serif font. The headline must be instantly readable. Typography is the hero.
-- Background: Use subtle digital textures. Think clean grids, faint blueprint lines, abstract representations of file folders, or smooth, calming gradients (e.g., deep charcoal to muted teal, off-white to light grey).
-- Color Palette: "Premium Utility." Use sophisticated tech colors—deep blues, forest greens, slate greys, or muted metallics. No neon, no aggressive reds, no chaotic colors.
-- Composition: Use ample whitespace to create a feeling of calm organization.
+Design style:
+- Modern, clean, high-contrast typography
+- Large, dominant headline text readable instantly
+- Minimalistic background with texture or subtle gradient
+- Bold color palette that conveys urgency and energy
+- No stock people, no generic icons, no clip art, no cheesy imagery
+- Avoid clutter—hero typography should control the composition
+- Use whitespace, layout tension, and creative typography as visual power
 
-NEGATIVE CONSTRAINTS (CRITICAL):
-- NO stock photos of people, computers, or desks.
-- NO cheesy icons (lightbulbs, gears, dollar signs).
-- NO "grunge," "distressed," or chaotic textures.
-- NO aggressive or shouting aesthetics.
+Format:
+- Vertical 1080x1350 optimized for Instagram feed and Reel cover images
+- Visual should feel premium, confident, and disruptive
+- Emotion over decoration
+- Include light grain or depth if it fits the tone
+- No excessive effects, keep it clean and powerful
 
-The final image should look like a high-end digital artifact that stops the scroll because of how clean it is, not how loud it is.
-TEXT TO RENDER: "${headline}"
+Input caption (use this to determine message and headline): "${headline}"
+
+Output:
+An Instagram-optimized graphic design featuring a bold headline extracted from the caption, with a modern, visually striking layout that grabs attention and communicates the core message immediately.
 `;
 
     const config = {

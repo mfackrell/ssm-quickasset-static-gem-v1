@@ -8,8 +8,24 @@ export async function generateInstagramCaption(topic) {
   console.log(`Generating Instagram caption for topic: "${topic}"`);
 
   const systemPrompt = `
-You are a content strategist for QuickAsset.
-You are writing a caption for an Instagram Static Post based on the "Lighter, Not Louder" philosophy.
+Write an Instagram Static Post caption designed to maximize comments, shares, saves, emotional reaction, and watch time.
+
+VOICE + TONE:
+- Aggressive, polarizing, raw, punchy, and direct.
+- Call out bullshit excuses and force action.
+- Conversational, spoken-aloud style.
+- Use heavy rhythm and spacing.
+- Use emojis for emphasis (🔥💀🚀⚡️😤📉📈).
+- Zero paragraphs. Zero essay tone. No filler. No safe language.
+
+STRUCTURE REQUIREMENTS:
+- Brutal first-line hook that punches the viewer in the face.
+- Very short lines (1–7 words each).
+- Lots of whitespace line breaks for pacing.
+- Pattern interrupts and emotional tension.
+- At least one challenge question to trigger comments.
+- Clear CTA to comment or share.
+- End with 12–18 relevant IG hashtags.
 `;
 
   const userPrompt = `
@@ -17,30 +33,16 @@ The audience is intelligent and intuitive but conditioned to doubt themselves. T
 
 TOPIC: ${topic}
 
-YOUR TASK:
-1. Analyze the INPUT HEADLINE to identify the specific audience or asset implied (e.g., if the headline mentions "CAD blocks," the audience is Architects).
-2. Write a caption (100-150 words) that expands on that specific angle.
+DO NOT:
+- Do not write meta labels like “Output:” or “Caption:”.
+- Do not explain what you are doing.
+- Do not produce short or test-mode responses.
+- Do not sound corporate or motivational-poster inspirational.
+- Do not compress or simplify the response.
 
-CAPTION STRUCTURE:
-1. The Validation: Acknowledge that they created this specific file for themselves just to survive their own workload. It wasn't "content"; it was a tool.
-2. The Shift: Point out that hundreds of people in their industry are struggling with the same problem, and they would happily pay $10-$20 for this solution.
-3. The Relief: Remind them they don't need a website, a logo, or a "brand" to sell it. They just need a checkout link.
-4. Soft CTA: "Link in bio to turn the file into a product in 60 seconds."
+OUTPUT FORMAT:
+Write only the caption with full line breaks and emojis. Nothing else.
 
-HASHTAG STRATEGY:
-- Include 5 tags specific to the audience (e.g., #architecture, #revit, #designlife).
-- Include 5 tags specific to the asset type (e.g., #cadblocks, #templates, #digitalassets).
-- Include 5 tags about "calm business" (e.g., #passiveincome, #sidehustleideas, #quickasset, #sellfiles).
-- Do NOT use spammy tags like #follow4follow or #like4like.
-
-TONE & STYLE:
-- "Lighter, not louder." Zero pressure.
-- Calm, observational voice.
-- Short, readable paragraphs.
-- NO "Hustle Bro" emojis (No 🚀, 😤, 💀, 💰). Use calm emojis if necessary (📂, ✨, ☕️).
-- NO hype language ("Explode your income," "Crush it," "Empire").
-
-Output ONLY the caption text.
 
 GENERATE NOW.
 `;

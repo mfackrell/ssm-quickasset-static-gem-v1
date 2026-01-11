@@ -23,12 +23,12 @@ app.post("/run", async (req, res) => {
   console.log("Scheduler trigger received", { timestamp: new Date().toISOString() });
 
   try {
-    const currentHour = new Date().getUTCHours() - 6; // Adjust -6 for CST
-    const decision = await shouldRunToday(currentHour);
+    const force = req.query.force === 'true';
 
     // --- SCHEDULING LOGIC ---
     if (!force) {
-      const decision = await shouldRunToday();
+      const currentHour = new Date().getUTCHours() - 6; // Adjust -6 for CST
+      const decision = await shouldRunToday(currentHour);
 
       if (!decision.shouldRun) {
         console.log('Skipping run:', decision.reason);
@@ -48,8 +48,6 @@ app.post("/run", async (req, res) => {
     const result = await runOrchestrator(req.body);
 
     // ✅ Only mark complete AFTER success
-    // If the orchestrator crashes, this line won't run, 
-    // so the scheduler will try again in 15 minutes.
     await markRunComplete();
 
     res.status(200).json({

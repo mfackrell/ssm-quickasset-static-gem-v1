@@ -23,7 +23,8 @@ app.post("/run", async (req, res) => {
   console.log("Scheduler trigger received", { timestamp: new Date().toISOString() });
 
   try {
-    const force = req.query.force === 'true';
+    const currentHour = new Date().getUTCHours() - 6; // Adjust -6 for CST
+    const decision = await shouldRunToday(currentHour);
 
     // --- SCHEDULING LOGIC ---
     if (!force) {
